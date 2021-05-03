@@ -26,12 +26,21 @@ if (Type == 'Average') {
     console.log(`Average is: ${Ave}`);
 };
 
-if (Type == 'Average') {
+if (Type == 'Mode') {
+    let PopCount=0;
+    let PrePopCount=0;
     for (let i = 0; i < NumNo; i++) {
-        Sum = parseInt(Sum) + parseInt(ValArr[i]);
+         for (let i2 = 0; i2 < NumNo; i2++) {
+            if(ValArr[i]==ValArr[i2]){
+                PopCount++;
+            }
+         }
+         if (PopCount>PrePopCount){
+             PrePopCount=PopCount;
+             PopCount=0;
+         }
     }
-    Ave = Sum / NumNo
-    console.log(`Average is: ${Ave}`);
+    console.log(`Average is: ${PrePopCount}`);
 };
 /*
 switch (OpType = Type) {
