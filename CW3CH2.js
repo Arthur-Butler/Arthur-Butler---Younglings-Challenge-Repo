@@ -26,57 +26,42 @@ if (Type == 'Average') {
     console.log(`Average is: ${Ave}`);
 };
 
-if (Type == 'Mode') {
-    let PopCount=0;
-    let PrePopCount=0;
-    for (let i = 0; i < NumNo; i++) {
-         for (let i2 = 0; i2 < NumNo; i2++) {
-            if(ValArr[i]==ValArr[i2]){
-                PopCount++;
-            }
-         }
-         if (PopCount>PrePopCount){
-             PrePopCount=PopCount;
-             PopCount=0;
-         }
+if (Type == "Mode") {
+  var PopCount = 0;
+  var PrePopCount = 0;
+  for (let i = 0; i < NumNo; i++) {
+    for (let i2 = 0; i2 < NumNo; i2++) {
+      if (ValArr[i] == ValArr[i2]) {
+        PopCount++;
+      }
     }
-    console.log(`Average is: ${PrePopCount}`);
-};
-/*
-switch (OpType = Type) {
-    case (Type = 'Sum'):
-        Sum = valArr.reduce(function (a, b) {
-            return a + b;
-        }, 0);
-        console.log(Sum);
-        break;
-
-    case (Type = 'Average'):
-        var Product = valArr.reduce(function (a, b) {
-            return a * b;
-        }, 0);
-        var Average = Product / NumNo
-        console.log(Average);
-        break;
-};
-
-case (Type = 'Median'):
-    console.log(sum);
-    break;
-
-case (Type = 'Mode'):
-    for (let i = 0; i < NumNo; i++) {
-        const sum = +valArr[i];
-    };
-    console.log(sum);
-    break;
-
-case (Type = 'Range'):
-    for (let i = 0; i < NumNo; i++) {
-        const sum = +valArr[i];
-    };
-    console.log(sum);
-    break;
+    if (PopCount > PrePopCount) {
+      PrePopCount = PopCount;
+      PopCount = 0;
+      var Mode = ValArr[i];
+    }
+  }
+  console.log(`Mode is: ${Mode}`);
 }
-*/
 
+if (Type == "Median") {
+  ValArr.sort(function (a, b) {
+    return a - b;
+  });
+  if (NumNo % 2 == 0) {
+    HalfLength = Math.round(NumNo / 2 - 1);
+    var Median = (ValArr[HalfLength] + ValArr[HalfLength + 1]) / 2;
+  } else {
+    HalfLength = Math.round(NumNo / 2 - 1);
+    var Median = ValArr[HalfLength];
+  }
+  console.log(`Median is: ${Median}`);
+}
+
+if (Type == "Range") {
+  ValArr.sort(function (a, b) {
+    return a - b;
+  });
+  var Range = ValArr[NumNo - 1] - ValArr[0];
+  console.log(`Range is: ${Range}`);
+}
