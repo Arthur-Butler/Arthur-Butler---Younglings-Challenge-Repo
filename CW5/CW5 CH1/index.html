@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+  <title>CW5 CH1</title>
+  <style>
+    body {
+      background: linear-gradient(to top left, blue, lightblue);
+    }
+
+    h1 {
+      font-size: 5cm;
+      font-family: arial;
+      background-color: white;
+      width: 100%;
+    }
+
+    button {
+      width: 20%;
+      height: 5cm;
+      background-color: grey;
+    }
+
+    .permissContainer1 {
+      background-color: gray;
+      width: 10cm;
+      height: 10cm;
+      border: 10px solid;
+      border-color: black;
+    }
+
+    .permissContainer2 {
+      background-color: gray;
+      width: 10cm;
+      height: 10cm;
+      font-size: 0.5cm;
+      font-family: arial;
+      border: 10px solid;
+      border-color: black;
+    }
+
+    form {
+      background-color: gray;
+    }
+  </style>
+</head>
+<body>
+  <center><h1>CH5 CH1: Positions</h1></center>
+  <center><video class="permissContainer1"></video></center>
+  <br />
+  <center><div class="permissContainer2"></div></center>
+  <br />
+  <center>
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="files[]" multiple />
+      <input type="submit" value="Upload File" name="submit" />
+    </form>
+  </center>
+  <br />
+  <br />
+  <center><button class="btnMicrophone">Microphone</button></center>
+  <br />
+  <center><button class="btnLocation">Location</button></center>
+  <script src="script.js"></script>
+</body>
